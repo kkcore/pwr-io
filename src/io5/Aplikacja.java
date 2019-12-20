@@ -11,8 +11,9 @@ package io5;
  */
 public class Aplikacja {
     public Aplikacja(){};
-    private ZarzadcaKatalog zarzadcaKatalogu = new ZarzadcaKatalog();
-    private ZarzadcaKoszyk zarzadcaKoszyka = new ZarzadcaKoszyk();
+    private ZarzadcaKatalog zarzadcaKatalog = new ZarzadcaKatalog();
+    private ZarzadcaKoszyk zarzadcaKoszyk = new ZarzadcaKoszyk(zarzadcaKatalog);
+    public static Uzytkownik uzytkownik = new Uzytkownik("Jan Kowalski");
     public void zarzadzajKoszykiem(){};
     public void edytujKatalog(){};
     public boolean uwierzytelnijUzytkownika(String idSesji){return true;};

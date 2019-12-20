@@ -10,6 +10,9 @@ package io5;
  * @author oszust
  */
 public class Uzytkownik {
+    public Uzytkownik(String login) {
+        this.login = login;
+    };
     protected int id;
     protected String login;
     protected String idSesji;

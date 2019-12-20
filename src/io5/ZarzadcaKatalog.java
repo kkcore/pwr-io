@@ -4,24 +4,70 @@
  * and open the template in the editor.
  */
 package io5;
-
+import java.time.LocalDate;
+import java.util.Random;
 /**
  *
  * @author oszust
  */
-public class ZarzadcaKatalog {
+import java.time.Month;
+import java.util.ArrayList;
+public class ZarzadcaKatalog implements Interakcjable {
     private Katalog katalog = new Katalog();
     public ZarzadcaKatalog(){};
     public void dodawanieProduktu(){};
     public void usuwanieProduktu(){};
     public void edycjaProduktu(){};
-    public void wprowadzDaneLogowania(){};
-    public void wprowadzWartosc(){};
+    public Produkt wprowadzDaneDodawania(){return null;};
     public void rodzajEdycjiProduktu(){};
-    public void wyswietlKatalog(){};
-    public PozycjaKoszyk wprowadzDaneWypozyczenia(){return null;}
-    public void typSortowania(){};
-    public void filtruj(){};
-    public void wprowadzDaneFiltracji(){};
-    public String wprowadzTekst(){return null;}
+    public void wyswietlKatalog(){
+    for (Produkt produkt: katalog.getProdukty()) {
+        produkt.wyswietlProdukt();
+    }
+    };
+    public PozycjaKoszyk wprowadzDaneWypozyczenia(Produkt produkt){
+        PozycjaKoszyk pozycjaKoszyk;
+        pozycjaKoszyk = new PozycjaKoszyk(produkt, LocalDate.of(2019, Month.DECEMBER, 25), 3);
+        return pozycjaKoszyk;
+    }
+    public String wybierzTypSortowania(){
+        return "rosnaco,nazwa";
+    }
+    public void sortuj() {
+        String typSortowania = this.wybierzTypSortowania();
+        boolean potwierdzenie = this.potwierdz();
+        if (potwierdzenie == false)
+            return;
+        katalog.sortowanie(typSortowania);
+    }
+    public void filtruj(){
+    boolean wybor = true;
+    if (wybor == false)
+        return;
+    Filtr filtr = this.wprowadzDaneFiltracji();
+    boolean odpowiedz = this.potwierdz();
+    if (odpowiedz == false)
+        return;
+    else
+        katalog.filtracja(filtr);
+    };
+    
+    public Filtr wprowadzDaneFiltracji(){
+    Filtr filtr = new Filtr("cena", 500, "<=");
+    return filtr;
+    };
+    
+    public void szukaj(){
+    String tekst = this.wprowadzTekst();
+    boolean potwierdz = this.potwierdz();
+    if (potwierdz == true)
+        this.katalog.szukanie(tekst);
+    };
+    public Produkt wybierzProdukt(){
+    ArrayList<Produkt> produkty = katalog.getProdukty();
+    Random rand = new Random();
+    int losowyNumerProduktu = rand.nextInt(produkty.size());
+    return produkty.get(losowyNumerProduktu);
+    }
+    public Katalog getKatalog(){return this.katalog;}
 }

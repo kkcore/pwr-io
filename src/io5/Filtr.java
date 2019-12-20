@@ -10,14 +10,20 @@ package io5;
  * @author oszust
  */
 public class Filtr {
-    private int operator;
+    private String operator;
     private double wartosc;
-    private int rodzaj;
-    public int getOperator(){return this.operator;}
-    public void setOperator(int value){this.operator = value;}
+    private String rodzaj;
+    
+    public Filtr(String rodzaj, int wartosc, String operator) {
+        this.rodzaj = rodzaj;
+        this.wartosc = wartosc;
+        this.operator = operator;
+    }
+    public String getOperator(){return this.operator;}
+    public void setOperator(String value){this.operator = value;}
     public double getWartosc(){return this.wartosc;}
     public void setWartosc(double value){this.wartosc = value;}
-    public int getRodzaj(){return this.rodzaj;}
-    public void setRodzaj(int value){this.rodzaj = value;}
+    public String getRodzaj(){return this.rodzaj;}
+    public void setRodzaj(String value){this.rodzaj = value;}
 
 }
