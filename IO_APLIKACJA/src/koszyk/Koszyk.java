@@ -22,7 +22,7 @@ import java.util.logging.Logger;
  */
 public class Koszyk {
     
-    private ArrayList<PozycjaKoszyk> produkty = new ArrayList<>();
+      private ArrayList<PozycjaKoszyk> produkty = new ArrayList<>();
     private double koszt = 0;
     
     public Koszyk(){};
@@ -55,6 +55,8 @@ public class Koszyk {
     };
     
     public void zmienIlosc(PozycjaKoszyk produkt, int ilosc){
+        if (ilosc < 0)
+            throw new java.lang.Error("Zmieniana ilość nie może być ujemna");
         produkt.setIloscWZamowieniu(ilosc);
     };
     public void zmienTermin(PozycjaKoszyk produkt, LocalDate termin){
@@ -95,5 +97,6 @@ public class Koszyk {
     double cena= produkt.getCena();
     pozycja.setCenaWZamowieniu(cena*ilosc);
     };
+    
     
 }

@@ -59,6 +59,7 @@ public class ZarzadcaKatalogTest {
     }
     
     @Test
+    @Category(TestProdukt.class)
     public void testDodawanieProduktu(){
         System.out.println("dodawanieProduktu");
         int ile = instance.katalog.produkty.size();
@@ -70,6 +71,7 @@ public class ZarzadcaKatalogTest {
     }
     
     @Test
+    @Category(TestProdukt.class)
     public void testWybierzProdukt(){
         System.out.println("wybierzProdukt");
         Produkt produkt;
