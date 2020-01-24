@@ -3,14 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package io5;
+package io5.Koszyk;
 
+import Aplikacja.Aplikacja;
+import io5.Koszyk.Klient;
+import io5.Katalog.Produkt;
+import Uzytkownik.Uzytkownik;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.time.LocalDate;
-import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 /**
@@ -24,8 +27,6 @@ public class Koszyk {
     
     public Koszyk(){};
     
-    public void wyslijSygnalDoWyswietleniaKatalogu(){};
-    
     public void usunZKoszyka(PozycjaKoszyk pozycja){
     Produkt produkt = pozycja.getProdukt();
     produkt.setIloscStan(produkt.getIloscStan() + pozycja.getIloscWZamowieniu());
@@ -35,8 +36,6 @@ public class Koszyk {
     public void setKoszt(double value){this.koszt = value;}
     
     public double getKoszt(){return this.koszt;}
-    
-    public void finalizacja(){}
     
     public ArrayList<PozycjaKoszyk> getProdukty() {return this.produkty;}
     
@@ -49,12 +48,15 @@ public class Koszyk {
     public void aktualizujKosztZamowienia(){
     double koszt = 0;
     for (PozycjaKoszyk pozycja: this.produkty){
-        koszt+= pozycja.getCenaWZamowieniu();
+        double cena = pozycja.getCenaWZamowieniu();
+        koszt+= cena;
     }
     this.koszt = koszt;
     };
     
     public void zmienIlosc(PozycjaKoszyk produkt, int ilosc){
+        if (ilosc < 0)
+            throw new java.lang.Error("Zmieniana ilość nie może być ujemna");
         produkt.setIloscWZamowieniu(ilosc);
     };
     public void zmienTermin(PozycjaKoszyk produkt, LocalDate termin){
@@ -81,10 +83,11 @@ public class Koszyk {
     
     public boolean odejmijOdSalda(double koszt){
     Klient uzytkownik = (Klient)Aplikacja.uzytkownik;
-    if (uzytkownik.getSaldo() < koszt) {
+    double saldo = uzytkownik.getSaldo();
+    if (saldo < koszt) {
         return false;
     }
-    uzytkownik.setSaldo(uzytkownik.getSaldo() - koszt);
+    uzytkownik.setSaldo(saldo - koszt);
     return true;
     }
     

@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package io5;
+package io5.Koszyk;
 
+import Uzytkownik.Uzytkownik;
 import java.util.Currency;
 
 /**

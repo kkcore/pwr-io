@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package io5;
+package io5.Katalog;
 
 import java.util.Currency;
 
@@ -12,7 +12,6 @@ import java.util.Currency;
  * @author oszust
  */
 public class Produkt {
-    private int id;
     private String nazwa;
     private double cena;
     private int iloscStan;
@@ -22,11 +21,10 @@ public class Produkt {
         this.nazwa = nazwa;
         this.cena = cena;
         this.iloscStan = iloscStan;
+        this.widocznosc = true;
     }
     public boolean getWidocznosc(){return this.widocznosc;}
     public void setWidocznosc(boolean widocznosc){this.widocznosc = widocznosc;}
-    public int getId(){return this.id;}
-    public void setId(int value){this.id = value;}
     public String getNazwa(){return this.nazwa;}
     public void setNazwa(String value){this.nazwa = value;}
     public double getCena(){return this.cena;}

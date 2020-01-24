@@ -3,8 +3,29 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package io5;
+/*
+zmiany w 
+-dodajPozycje
+-edytujPozycje
+-finalizujZamowienie
+-usunpozycja
+-filtruj
+-wyswietlKatalog
+-wybierzProdukt
+-wprowadzDaneWypozyczenia
+-dodajDoKoszyka
+-akutalizujKosztZamowienia
+-odejmijOdSalda
+-dodajZamowienie
+-szukanie
+-zarzadzajKoszykiem
+*/
+package io5.Koszyk;
 
+import Wspolne.Interakcjable;
+import io5.Koszyk.Koszyk;
+import io5.Katalog.ZarzadcaKatalog;
+import io5.Katalog.Produkt;
 import java.util.ArrayList;
 import java.util.Random;
 import java.time.LocalDate;
@@ -21,11 +42,11 @@ public class ZarzadcaKoszyk implements Interakcjable {
     private ZarzadcaKatalog zarzadcaKatalog;
     public String rodzajEdycjiKoszyka(){ return " ";};
     public void usunPozycje(){
-        PozycjaKoszyk pozycjaKoszyk = this.wybierzPozycje();
+        PozycjaKoszyk pozycja = this.wybierzPozycje();
         boolean odpowiedz = this.potwierdz();
         if (odpowiedz == false)
             return;
-        koszyk.usunZKoszyka(pozycjaKoszyk);
+        koszyk.usunZKoszyka(pozycja);
         koszyk.aktualizujKosztZamowienia();
     };
     
@@ -44,7 +65,6 @@ public class ZarzadcaKoszyk implements Interakcjable {
     public void dodajPozycje(){
        this.zarzadcaKatalog.filtruj();
        this.zarzadcaKatalog.szukaj();
-       this.zarzadcaKatalog.wybierzTypSortowania();
        this.zarzadcaKatalog.wyswietlKatalog();
        Produkt produkt = this.zarzadcaKatalog.wybierzProdukt();
        PozycjaKoszyk pozycjaKoszyk = this.zarzadcaKatalog.wprowadzDaneWypozyczenia(produkt);
@@ -77,7 +97,8 @@ public class ZarzadcaKoszyk implements Interakcjable {
      return "edycja terminu";
     }
     public void zarzadzajKoszykiem() {
-        if (koszyk.getProdukty().isEmpty())
+        ArrayList<PozycjaKoszyk> produkty = koszyk.getProdukty();
+        if (produkty.isEmpty())
              this.dodajPozycje();
         else {
             String wybor = this.rodzajEdycjiKoszyka();
@@ -97,10 +118,10 @@ public class ZarzadcaKoszyk implements Interakcjable {
         boolean odpowiedz = this.potwierdz();
         if (odpowiedz == false)
             return;
-        this.koszyk.finalizacja();
         boolean czyOdjeto = this.koszyk.odejmijOdSalda(this.koszyk.getKoszt());
         if (czyOdjeto == false)
             throw new java.lang.Error("Twoje saldo jest za małe na zakup");
         this.koszyk.dodajZamowienie();
     }
+    public Koszyk getKoszyk(){return this.koszyk;}
 }

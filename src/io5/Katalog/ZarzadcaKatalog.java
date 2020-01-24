@@ -3,7 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package io5;
+package io5.Katalog;
+import Wspolne.Interakcjable;
+import io5.Katalog.Produkt;
+import io5.Katalog.Filtr;
+import io5.Katalog.Katalog;
+import io5.Koszyk.PozycjaKoszyk;
 import java.time.LocalDate;
 import java.util.Random;
 /**
@@ -27,18 +32,8 @@ public class ZarzadcaKatalog implements Interakcjable {
     };
     public PozycjaKoszyk wprowadzDaneWypozyczenia(Produkt produkt){
         PozycjaKoszyk pozycjaKoszyk;
-        pozycjaKoszyk = new PozycjaKoszyk(produkt, LocalDate.of(2019, Month.DECEMBER, 25), 3);
+        pozycjaKoszyk = new PozycjaKoszyk(produkt, LocalDate.of(2020, Month.JANUARY, 30), 3);
         return pozycjaKoszyk;
-    }
-    public String wybierzTypSortowania(){
-        return "rosnaco,nazwa";
-    }
-    public void sortuj() {
-        String typSortowania = this.wybierzTypSortowania();
-        boolean potwierdzenie = this.potwierdz();
-        if (potwierdzenie == false)
-            return;
-        katalog.sortowanie(typSortowania);
     }
     public void filtruj(){
     boolean wybor = true;

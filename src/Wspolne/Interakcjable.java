@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package io5;
+package Wspolne;
 import java.util.Random;
 /**
  *
@@ -19,6 +19,6 @@ public interface Interakcjable {
         return losowaLiczba;
     }
     public default String wprowadzTekst() {
-        return "tekst";
+        return "Scyzoryk";
     }
 }
