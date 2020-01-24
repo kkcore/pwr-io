@@ -10,6 +10,7 @@ import katalog.Produkt;
 import java.util.ArrayList;
 import java.util.Currency;
 import java.util.IllegalFormatCodePointException;
+import java.util.List;
 import java.util.Random;
 
 /**
@@ -17,7 +18,7 @@ import java.util.Random;
  * @author oszust
  */
 public class Katalog {
-    public ArrayList<Produkt> produkty = new ArrayList<>();
+    public List<Produkt> produkty = new ArrayList<>();
     private Filtr filtr = null;
     public Katalog(){};
     void dodanieProduktu(Produkt produkt)
@@ -156,6 +157,6 @@ public class Katalog {
             produkt.setWidocznosc(false);
     }
     };
-    public ArrayList<Produkt> getProdukty(){return this.produkty;}
+    public List<Produkt> getProdukty(){return this.produkty;}
     public void setProdukty(ArrayList<Produkt> produkty){this.produkty = produkty;}
 }

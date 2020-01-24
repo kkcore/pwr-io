@@ -3,9 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Xavier%20Davis/Documents/NetBeansProjects/IO_APLIKACJA/src/io5/ProduktTest.java</file>
-            <file>file:/C:/Users/Xavier%20Davis/Documents/NetBeansProjects/IO_APLIKACJA/src/io5/Produkt.java</file>
-            <file>file:/C:/Users/Xavier%20Davis/Documents/NetBeansProjects/IO_APLIKACJA/src/io5/Aplikacja.java</file>
+            <file>file:/C:/Users/Xavier%20Davis/Documents/NetBeansProjects/IO_APLIKACJA/src/koszyk/PozycjaKoszyk.java</file>
+            <file>file:/C:/Users/Xavier%20Davis/Documents/NetBeansProjects/IO_APLIKACJA/test/katalog/TestEntity.java</file>
+            <file>file:/C:/Users/Xavier%20Davis/Documents/NetBeansProjects/IO_APLIKACJA/test/katalog/ZarzadcaKatalogTest.java</file>
+            <file>file:/C:/Users/Xavier%20Davis/Documents/NetBeansProjects/IO_APLIKACJA/test/katalog/TestControl.java</file>
+            <file>file:/C:/Users/Xavier%20Davis/Documents/NetBeansProjects/IO_APLIKACJA/src/katalog/ZarzadcaKatalog.java</file>
+            <file>file:/C:/Users/Xavier%20Davis/Documents/NetBeansProjects/IO_APLIKACJA/test/katalog/Dane.java</file>
+            <file>file:/C:/Users/Xavier%20Davis/Documents/NetBeansProjects/IO_APLIKACJA/test/katalog/KatalogTest.java</file>
+            <file>file:/C:/Users/Xavier%20Davis/Documents/NetBeansProjects/IO_APLIKACJA/src/katalog/Katalog.java</file>
+            <file>file:/C:/Users/Xavier%20Davis/Documents/NetBeansProjects/IO_APLIKACJA/src/katalog/Produkt.java</file>
         </group>
     </open-files>
 </project-private>

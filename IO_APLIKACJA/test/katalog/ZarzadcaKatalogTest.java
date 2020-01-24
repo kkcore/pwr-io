@@ -32,12 +32,8 @@ public class ZarzadcaKatalogTest {
     public ExpectedException exception = ExpectedException.none();
     
     @BeforeClass
-    public void setUp() {
+    public static void setUp() {
         instance = new ZarzadcaKatalog();
-        for(int i=0; i<8; i++)
-        {
-            instance.katalog.produkty.add(dane.produkty[i]);
-        }
         dane = new Dane();
         
         List <Produkt> przykl = new ArrayList<Produkt>();
@@ -46,16 +42,19 @@ public class ZarzadcaKatalogTest {
         {
             przykl.add(dane.produkty[i]);
         }
+        
+        instance.katalog.produkty = przykl;
+        instance.przykladoweProdukty = przykl;
     }
     
     @Test
     public void testUsuwanieProduktu() {
         System.out.println("usuwanieProduktu");
         int ile = instance.katalog.produkty.size();
-        for(int i=0; i<8; i++)
+        for(int i=1; i<=8; i++)
         {
             instance.usuwanieProduktu();
-            assertEquals(ile, instance.katalog.produkty.size());
+            assertEquals(ile - i, instance.katalog.produkty.size());
         }
     }
     
@@ -63,10 +62,10 @@ public class ZarzadcaKatalogTest {
     public void testDodawanieProduktu(){
         System.out.println("dodawanieProduktu");
         int ile = instance.katalog.produkty.size();
-        for(int i=0; i<8; i++)
+        for(int i=1; i<=8; i++)
         {
             instance.dodawanieProduktu();
-            assertEquals(ile, instance.katalog.produkty.size());
+            assertEquals(ile + i, instance.katalog.produkty.size());
         }
     }
     

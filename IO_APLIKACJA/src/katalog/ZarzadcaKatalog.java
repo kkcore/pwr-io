@@ -118,7 +118,7 @@ public class ZarzadcaKatalog implements Interakcjable {
         this.katalog.szukanie(tekst);
     };
     public Produkt wybierzProdukt(){
-    ArrayList<Produkt> produkty = katalog.getProdukty();
+    List<Produkt> produkty = katalog.getProdukty();
     Random rand = new Random();
     int losowyNumerProduktu = rand.nextInt(produkty.size());
     return produkty.get(losowyNumerProduktu);

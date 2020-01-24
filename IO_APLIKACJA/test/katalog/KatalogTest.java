@@ -59,7 +59,7 @@ public class KatalogTest {
             assertEquals(instance.produkty.get(i), dane.produkty[i]);
         }
         exception.expect(ArrayIndexOutOfBoundsException.class);
-        exception.expectMessage("Code point = 0x0");
+        exception.expectMessage("0");
         instance.edycjaProduktu(dane.indeksyEdycji[7], dane.rodzajeEdycji[7]);
         
         

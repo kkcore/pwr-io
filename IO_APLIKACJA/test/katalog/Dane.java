@@ -15,7 +15,7 @@ public class Dane {
     new Produkt("Kijki do nordic walking", 2.99, 50), new Produkt("Scyzoryk ostry", 1.99, 20), new Produkt("Koc", 1.99, 30), new Produkt("Scyzoryk czarny", 1.49, 40),
     new Produkt("Rekawice gumowe", 2.99, 15)};
     
-    int indeksyEdycji[] = {4, 5, 3, 1, 0, 0, 1, 8};
+    int indeksyEdycji[] = {4, 5, 3, 1, 0, 0, 1, 9};
     int rodzajeEdycji[] = {1, 1, 0, 0, 1, 0, 1, 0};
     
     String nazwyProduktow[] = {"Narty", "Buty traperskie", "Spiwor", "Scyzoryk Husqvarna", "Kijki do nordic walking", "Scyzoryk ostry", "Koc", "Scyzoryk czarny", "Rekawice gumowe"};
