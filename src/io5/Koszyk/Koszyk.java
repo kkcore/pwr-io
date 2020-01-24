@@ -5,10 +5,10 @@
  */
 package io5.Koszyk;
 
-import Aplikacja.Aplikacja;
+import io5.Aplikacja.Aplikacja;
 import io5.Koszyk.Klient;
 import io5.Katalog.Produkt;
-import Uzytkownik.Uzytkownik;
+import io5.Uzytkownik.Uzytkownik;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;

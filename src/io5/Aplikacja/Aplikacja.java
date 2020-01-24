@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Aplikacja;
+package io5.Aplikacja;
 
-import Uzytkownik.Uzytkownik;
+import io5.Uzytkownik.Uzytkownik;
 import io5.Koszyk.ZarzadcaKoszyk;
 import io5.Katalog.ZarzadcaKatalog;
 /**

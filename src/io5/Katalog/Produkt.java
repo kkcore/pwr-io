@@ -18,6 +18,10 @@ public class Produkt {
     private boolean widocznosc;
     public Produkt(){};
     public Produkt(String nazwa, double cena, int iloscStan) {
+        if (cena < 0)
+            throw new java.lang.Error("Cena nie może być ujemna!");
+        if (iloscStan < 0)
+            throw new java.lang.Error("Ilość nie może być ujemna");
         this.nazwa = nazwa;
         this.cena = cena;
         this.iloscStan = iloscStan;

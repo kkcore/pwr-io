@@ -22,7 +22,7 @@ zmiany w
 */
 package io5.Koszyk;
 
-import Wspolne.Interakcjable;
+import io5.Wspolne.Interakcjable;
 import io5.Koszyk.Koszyk;
 import io5.Katalog.ZarzadcaKatalog;
 import io5.Katalog.Produkt;

@@ -5,7 +5,7 @@
  */
 package io5.Koszyk;
 
-import Uzytkownik.Uzytkownik;
+import io5.Uzytkownik.Uzytkownik;
 import java.util.Currency;
 
 /**

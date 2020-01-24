@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package io5.Katalog;
-import Wspolne.Interakcjable;
+import io5.Wspolne.Interakcjable;
 import io5.Katalog.Produkt;
 import io5.Katalog.Filtr;
 import io5.Katalog.Katalog;
